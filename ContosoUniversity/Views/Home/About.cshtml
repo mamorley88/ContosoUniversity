@@ -1,7 +1,69 @@
-﻿@{
-    ViewData["Title"] = "About";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿@model IEnumerable<ContosoUniversity.Models.SchoolViewModels.EnrollmentDateGroup>
 
-<p>Use this area to provide additional information.</p>
+@{
+    ViewData["Title"] = "Student Body Statistics";
+}
+<h1 style="font-family: 'Vollkorn SC', serif; color:greenyellow; background-color:SlateBlue; text-align: center;">University President</h1>
+
+
+<p style="font-family: 'Vollkorn SC', serif; color:greenyellow; background-color:slateblue; text-align: center;">
+Marco Morley</p>
+
+<style>
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+<p>
+    <img src="https://images.pexels.com/photos/1990/man-person-people-emotions.jpg?h=350&auto=compress&cs=tinysrgb" alt="Contoso Administration Building" width="300" height="200">
+</p>
+
+
+<p style="font-family: 'Vollkorn SC', serif; text-align: center;">
+    My office is always open!
+</p>
+<p style="font-family: 'Vollkorn SC', serif; text-align: center;">
+    Marco Morley
+</p>
+<p style="font-family: 'Vollkorn SC', serif; text-align: center;">
+    2898 vector avenue
+</p>    
+ <p style="font-family: 'Vollkorn SC', serif; text-align: center;">
+     Sandpoint, Idaho 83425
+</p>    
+<p style="font-family: 'Vollkorn SC', serif; text-align: center;">
+    800-348-3497
+</p>    
+   
+    
+
+
+
+
+
+
+<h3>Student Body Statistics</h3>
+
+<table>
+    <tr>
+        <th>
+            Enrollment Date
+        </th>
+        <th>
+            Students
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                @item.StudentCount
+            </td>
+        </tr>
+    }
+</table>
